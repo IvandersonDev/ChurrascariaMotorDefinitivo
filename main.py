@@ -15,7 +15,7 @@ def cadastrar_usuario():
     else:
         return render_template('index2.html')
 
-@app.route('/grafvioleciapib')
+@app.route('/grafvioleciapib', methods =['POST','GET'])
 def gerarGrafViolenciaPib():
     if request.method == 'POST':
         filtro = int(request.form.get('valor'))
@@ -48,4 +48,4 @@ def motormanda():
     return render_template('index2.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True , port=5001)
